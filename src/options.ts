@@ -9,8 +9,8 @@ interface Settings {
 
 const defaultSettings: Settings = {
   enabled: true,
-  targetSites: ['udai.c-learning.jp', 'example.com', 'localhost'],
-  dateSelectors: ['.TODO-DATE', '.date', '.datetime', '.created-at', '.updated-at', 'time', '[datetime]', '.post-date', '.article-date'],
+  targetSites: ['udai.c-learning.jp'],
+  dateSelectors: ['.TODO-DATE'],
   dayFormat: 'short'
 };
 

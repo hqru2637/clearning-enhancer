@@ -64,6 +64,7 @@ class DateEnhancer {
     return this.config.targetSites.some(site => hostname.includes(site)) ||
       this.config.targetSites.includes('*'); // 全サイト対象の場合
   }
+
   private enhanceDates(): void {
     if (!this.isEnabled) return;
 
@@ -73,6 +74,7 @@ class DateEnhancer {
       elements.forEach(element => this.processElement(element as HTMLElement));
     });
   }
+
   private processElement(element: HTMLElement): void {
     // 既に処理済みの場合はスキップ
     if (element.getAttribute('data-day-enhanced') === 'true') return;
@@ -113,6 +115,8 @@ class DateEnhancer {
               element.textContent = `${text}（${dayName}）`;
               element.setAttribute('data-day-enhanced', 'true');
               matched = true;
+
+              console.log(`Detected ${date.toLocaleDateString()} in elements. Adding: ${dayName}`);
               break;
             }
           }
