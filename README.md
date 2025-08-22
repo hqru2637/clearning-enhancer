@@ -2,13 +2,22 @@
 
 ## 機能
 
-- DateEnhancer
+- DateEnhancer  
   課題一覧画面の日付表示に曜日を追加
-- HighlightPage
+- HighlightPage  
   サイドバーに現在開いている講義をハイライト表示
-- 🚧 EnterAttendance
+- 🚧 EnterAttendance  
   出席キー入力後にEnterキーで出席ボタンを押させる
 
+
+## インストール
+- [リリースページ](https://github.com/hqru2637/clearning-enhancer/releases)から最新のzipファイルをダウンロードし、任意の場所に展開
+- `chrome://extensions/` を開き、「パッケージ化されていない拡張機能を読み込む」をクリック
+- 展開したフォルダを選択
+- 完了
+
+> [!WARNING]
+> chromeは展開したフォルダを参照して拡張機能を読み込むため、フォルダの移動・削除は行わないでください。
 
 ## 開発
 
