@@ -4,20 +4,17 @@ interface DateEnhancementConfig {
 }
 
 export class DateEnhancer {
-  private config: DateEnhancementConfig;
+  private config: DateEnhancementConfig = {
+    dateSelectors: ['.TODO-DATE'],
+    datePatterns: [/(\d{4})\/(\d{1,2})\/(\d{1,2})/g],
+  };
 
   constructor() {
-    this.config = {
-      dateSelectors: ['.TODO-DATE'],
-      datePatterns: [/(\d{4})\/(\d{1,2})\/(\d{1,2})/g],
-    };
-
     this.init();
   }
 
   private init(): void {
     this.enhanceDates();
-
     this.observeDOM();
 
     console.log('[DateEnhancer] initialized');

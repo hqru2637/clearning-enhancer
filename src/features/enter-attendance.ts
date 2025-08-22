@@ -1,14 +1,14 @@
-export class EnterAttend {
+export class EnterAttendance {
   constructor() {
     this.init();
-    console.log('[EnterAttend] initialized');
+    console.log('[EnterAttendance] initialized');
   }
 
   private init(): void {
     const input = document.querySelector<HTMLInputElement>('#attendForm input[name="keycode"]');
     if (!input) return;
 
-    console.log('[EnterAttend] Attendance form found, attaching event listeners.');
+    console.log('[EnterAttendance] Attendance form found, attaching event listeners.');
 
     let locked = false;
 
@@ -36,9 +36,9 @@ export class EnterAttend {
       }, 500);
     };
 
-    if (!(input as any).__enterAttendAttached) {
+    if (!(input as any).__enterAttendanceAttached) {
       input.addEventListener('keydown', onKeydown, { passive: false });
-      (input as any).__enterAttendAttached = true;
+      (input as any).__enterAttendanceAttached = true;
     }
   }
 }
