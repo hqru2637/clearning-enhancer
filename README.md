@@ -12,7 +12,7 @@
 
 ## インストール
 - [リリースページ](https://github.com/hqru2637/clearning-enhancer/releases)から最新のzipファイルをダウンロードし、任意の場所に展開
-- [chrome://extensions/](chrome://extensions/) を開き、「パッケージ化されていない拡張機能を読み込む」をクリック
+- `chrome://extensions/` を開き、「パッケージ化されていない拡張機能を読み込む」をクリック
 - 展開したフォルダを選択
 - 完了
 
