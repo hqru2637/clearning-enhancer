@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/chrome-manifest",
   "manifest_version": 3,
   "name": "CLearning Enhancer",
   "version": "0.1.0",
@@ -10,18 +11,13 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*/*",
-        "http://*/*"
+        "https://udai.c-learning.jp/*"
       ],
       "js": ["content.js"],
       "run_at": "document_end"
     }
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "action": {
     "default_title": "CLearning Enhancer"
-  },
-  "options_page": "options.html"
+  }
 }

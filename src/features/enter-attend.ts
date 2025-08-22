@@ -1,7 +1,7 @@
 export class EnterAttend {
   constructor() {
     this.init();
-    console.log('EnterAttend initialized');
+    console.log('[EnterAttend] initialized');
   }
 
   private init(): void {
