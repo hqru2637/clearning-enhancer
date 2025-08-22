@@ -38,9 +38,20 @@ export class HighlightPage {
 
     const text = currentItem.querySelector('span')
     if (!text) return console.error('Text element not found in current item');
-
+    
     text.style.fontWeight = 'bold';
-    text.style.border = '2px solid #ffcc00 !important';
+
+    const white = 'rgb(240, 240, 240)';
+    const black = 'rgb(30, 30, 30)';
+
+    text.style.color = white;
+    // on hover:
+    text.addEventListener('mouseover', () => {
+      text.style.color = black;
+    });
+    text.addEventListener('mouseout', () => {
+      text.style.color = white;
+    });
   }
 
   private getSidebarItems(): HTMLElement[] {
