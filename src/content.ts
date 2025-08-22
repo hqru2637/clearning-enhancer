@@ -1,4 +1,5 @@
 import { DateEnhancer } from './features/date-enhancer';
+import { EnterAttend } from './features/enter-attend';
 import { HighlightPage } from './features/highlight-page';
 
 
@@ -14,4 +15,5 @@ if (document.readyState === 'loading') {
 function load() {
   new DateEnhancer();
   new HighlightPage();
+  new EnterAttend();
 }
