@@ -4,6 +4,9 @@ on:
   release:
     types: [created]
 
+permissions:
+  contents: write
+
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
@@ -28,18 +31,10 @@ jobs:
       - name: Build extension
         run: pnpm build
 
-      - name: Create release archive
+      - name: Upload extension to release
         run: |
-          cd dist
-          zip -r ../clearing-enhancer-${{ github.event.release.tag_name }}.zip .
-          cd ..
-
-      - name: Upload release asset
-        uses: actions/upload-release-asset@v1
+          FILE_NAME="clearning-enhancer-${{ github.event.release.tag_name }}.zip"
+          zip -r ./$FILE_NAME ./dist
+          gh release upload ${{ github.event.release.tag_name }} $FILE_NAME
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./clearing-enhancer-${{ github.event.release.tag_name }}.zip
-          asset_name: clearing-enhancer-${{ github.event.release.tag_name }}.zip
-          asset_content_type: application/zip
