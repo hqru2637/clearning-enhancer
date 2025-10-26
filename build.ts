@@ -11,7 +11,8 @@ await build({
   watch: isDev,
   sourcemap: isDev,
   copy: [
-    { from: 'src/manifest.json', to: 'dist/manifest.json' }
+    { from: 'src/manifest.json', to: 'dist/manifest.json' },
+    { from: 'src/style.css', to: 'dist/style.css' },
   ],
 });
 

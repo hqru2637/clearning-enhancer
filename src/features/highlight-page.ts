@@ -23,7 +23,7 @@ export class HighlightPage {
     const currentItem = sidebarItems.find((li) => li.textContent!.trim().startsWith(currentPageName));
     if (!currentItem) return console.error('Current item not found in sidebar');
 
-    console.log('Current item:', currentItem);
+    // console.log('Current item:', currentItem);
 
     const text = currentItem.querySelector('span');
     if (!text) return console.error('Text element not found in current item');

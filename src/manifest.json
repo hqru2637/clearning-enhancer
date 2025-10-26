@@ -14,6 +14,7 @@
         "https://udai.c-learning.jp/*"
       ],
       "js": ["content.iife.js"],
+      "css": ["style.css"],
       "run_at": "document_end"
     }
   ],

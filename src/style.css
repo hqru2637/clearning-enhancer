@@ -1,0 +1,16 @@
+.mark-as-read-button {
+  display: inline-block;
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
+  padding: 6.5px 9px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #545454;
+  text-decoration: none !important;
+}
+
+.mark-as-read-button:hover {
+  background-color: #f0f0f0;
+  border-color: #a0a0a0;
+  color: #000;
+}
