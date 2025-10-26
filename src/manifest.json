@@ -4,10 +4,7 @@
   "name": "CLearning Enhancer",
   "version": "0.1.1",
   "description": "CLearningを使いやすくする拡張機能",
-  "permissions": [
-    "activeTab",
-    "storage"
-  ],
+  "permissions": [],
   "content_scripts": [
     {
       "matches": [
