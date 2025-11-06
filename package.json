@@ -2,8 +2,8 @@
   "name": "clearning-enhancer",
   "type": "module",
   "scripts": {
-    "build": "pnpm typecheck && node build.ts",
-    "dev": "node build.ts --dev",
+    "build": "pnpm typecheck && bun build.ts",
+    "dev": "bun build.ts --dev",
     "typecheck": "tsc"
   },
   "devDependencies": {

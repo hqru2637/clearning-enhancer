@@ -4,7 +4,16 @@
   "name": "CLearning Enhancer",
   "version": "0.2.0",
   "description": "CLearningを使いやすくする拡張機能",
-  "permissions": [],
+  "permissions": [
+    "tabs",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://udai.c-learning.jp/*"
+  ],
+  "background": {
+    "service_worker": "background.iife.js"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -12,7 +21,7 @@
       ],
       "js": ["content.iife.js"],
       "css": ["style.css"],
-      "run_at": "document_end"
+      "run_at": "document_idle"
     }
   ],
   "action": {

@@ -1,4 +1,4 @@
-import { DateEnhancer, HighlightPage, EnterAttendance, MarkAsRead } from './features';
+import { DateEnhancer, HighlightPage, EnterAttendance, MarkAsRead, ShowPDFTitle } from './features';
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
@@ -13,4 +13,5 @@ function load() {
   new HighlightPage();
   new EnterAttendance();
   new MarkAsRead();
+  new ShowPDFTitle();
 }
