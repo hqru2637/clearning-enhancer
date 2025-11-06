@@ -6,10 +6,12 @@
   課題一覧画面の日付表示に曜日を追加
 - HighlightPage  
   サイドバーに現在開いている講義をハイライト表示
-- 🚧 EnterAttendance  
+- EnterAttendance  
   出席キー入力後にEnterキーで出席ボタンを押させる
 - MarkAsRead  
   講義ページに「全て既読にする」ボタンを追加
+- ShowPDFTitle  
+  PDFファイルのタブ名に正しいタイトルを表示
 
 
 ## インストール
