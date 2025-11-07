@@ -2,7 +2,7 @@
   "name": "clearning-enhancer",
   "type": "module",
   "scripts": {
-    "build": "pnpm typecheck && bun build.ts",
+    "build": "bun run typecheck && bun build.ts",
     "dev": "bun build.ts --dev",
     "typecheck": "tsc"
   },
