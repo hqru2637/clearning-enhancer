@@ -29,18 +29,18 @@
 ### 前提条件
 
 - Node.js (24以上)
-- pnpm
+- Bun
 
 ### セットアップ
 
 1. 依存関係をインストール
 ```bash
-pnpm install
+bun i
 ```
 
 2. ビルド
 ```bash
-pnpm build
+bun run build
 ```
 
 ### Chrome拡張機能として読み込み
@@ -52,7 +52,7 @@ pnpm build
 
 ### 開発モードでの実行
 ```bash
-pnpm dev
+bun dev
 ```
 
 ## ライセンス
