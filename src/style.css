@@ -7,10 +7,82 @@
   font-size: 16px;
   color: #545454;
   text-decoration: none !important;
+  transition: all 0.2s ease;
 }
 
 .mark-as-read-button:hover {
   background-color: #f0f0f0;
   border-color: #a0a0a0;
   color: #000;
+}
+
+.open-syllabus-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+.open-syllabus-button {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 6.5px 9px;
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #545454;
+  font-size: 16px;
+  text-decoration: none !important;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.open-syllabus-button:hover {
+  background-color: #f0f8ff !important;
+  border-color: #4682b4 !important;
+  color: #4682b4 !important;
+}
+
+.open-syllabus-wrapper:hover .open-syllabus-button,
+.open-syllabus-wrapper:focus-within .open-syllabus-button {
+  border-color: #4682b4 !important;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 1px solid #ebebeb !important;
+}
+
+.open-syllabus-year-input {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  
+  padding: 2px 0 !important;
+  border: 1px solid #4682b4 !important;
+  border-bottom: none !important;
+  border-radius: 4px 4px 0 0 !important;
+  background-color: #fff;
+  color: #545454;
+  text-align: center;
+  
+  /* Animation Initial State */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.open-syllabus-wrapper:hover .open-syllabus-year-input,
+.open-syllabus-year-input:focus {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.open-syllabus-year-input:focus {
+  background-color: #f0f8ff !important;
+  outline: none !important;
 }
