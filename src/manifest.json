@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/chrome-manifest",
   "manifest_version": 3,
-  "name": "CLearning Enhancer",
-  "version": "0.3.1",
-  "description": "CLearningを使いやすくする拡張機能",
+  "name": "C-learning Enhancer",
+  "version": "0.4.0",
+  "description": "C-learningを使いやすくする拡張機能",
   "permissions": [
     "tabs",
     "webRequest"
@@ -25,6 +25,6 @@
     }
   ],
   "action": {
-    "default_title": "CLearning Enhancer"
+    "default_title": "C-learning Enhancer"
   }
 }
