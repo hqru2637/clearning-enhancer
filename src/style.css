@@ -86,3 +86,11 @@
   background-color: #f0f8ff !important;
   outline: none !important;
 }
+
+.multiline-ellipsis {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

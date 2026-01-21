@@ -1,3 +1,5 @@
+import { Sidebar } from '../parts';
+
 export class HighlightPage {
   static readonly BREADCRUMB_ID = 'breadcrumbs';
 
@@ -17,36 +19,72 @@ export class HighlightPage {
     const currentPageName = currentPage.textContent!.replace('…', '').trim();
     console.log('current page:', currentPageName);
 
-    const sidebarItems = this.getSidebarItems();
-    if (sidebarItems.length === 0) return console.error('Failed to get sidebar items');
+    const sidebar = Sidebar.load();
+    if (!sidebar) return console.error('Failed to load sidebar');
 
-    const currentItem = sidebarItems.find((li) => li.textContent!.trim().startsWith(currentPageName));
-    if (!currentItem) return console.error('Current item not found in sidebar');
+    const allItems = sidebar.getAllItems();
+    // improve sidebar item appearance
+    for (const item of allItems) {
+      item.element.style.padding = '4px 18px 4px 6px';
+      item.element.title = item.getName();
+      item.getNameElement().classList.add('multiline-ellipsis');
+    }
 
-    // console.log('Current item:', currentItem);
+    const currentItem = allItems.find((item) => item.getName().startsWith(currentPageName));
+    if (!currentItem) return console.error('Current item not found in sidebar', currentPageName, allItems);
 
-    const text = currentItem.querySelector('span');
-    if (!text) return console.error('Text element not found in current item');
+    // open and highlight current folder
+    if (currentItem.folder) {
+      currentItem.folder.open(); // open if inside a folder
 
-    text.style.fontWeight = 'bold';
+      const styles = {
+        default: {
+          backgroundColor: '#646464',
+        },
+        hovered: {
+          backgroundColor: '#eeeeee',
+        }
+      }
 
-    const white = 'rgb(240, 240, 240)';
-    const black = 'rgb(30, 30, 30)';
+      const folderEl = currentItem.folder.getLabelElement();
+      folderEl.style.fontWeight = 'bold';
+      folderEl.style.backgroundColor = styles.default.backgroundColor;
 
-    text.style.color = white;
-    // on hover:
-    text.addEventListener('mouseover', () => {
-      text.style.color = black;
-    });
-    text.addEventListener('mouseout', () => {
-      text.style.color = white;
-    });
-  }
+      folderEl.addEventListener('mouseover', () => {
+        folderEl.style.backgroundColor = styles.hovered.backgroundColor;
+      });
+      folderEl.addEventListener('mouseout', () => {
+        folderEl.style.backgroundColor = styles.default.backgroundColor;
+      });
+    }
 
-  private getSidebarItems(): HTMLElement[] {
-    const elements = document.querySelector('.menu-inner ul')?.children;
-    if (!elements) return [];
-    return [...elements] as HTMLElement[];
+    // highlight current item
+    {
+      const styles = {
+        default: {
+          color: '#f0f0f0',
+          backgroundColor: '#6e6e6e',
+        },
+        hovered: {
+          color: '#1e1e1e',
+          backgroundColor: '#eeeeee',
+        }
+      }
+
+      const el = currentItem.element;
+      el.style.fontWeight = 'bold';
+      el.style.color = styles.default.color;
+      el.style.backgroundColor = styles.default.backgroundColor;
+
+      el.addEventListener('mouseover', () => {
+        el.style.color = styles.hovered.color;
+        el.style.backgroundColor = styles.hovered.backgroundColor;
+      });
+      el.addEventListener('mouseout', () => {
+        el.style.color = styles.default.color;
+        el.style.backgroundColor = styles.default.backgroundColor;
+      });
+    }
   }
 
   private getBreadcrumbs(): Element[] {
