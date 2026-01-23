@@ -94,3 +94,7 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
+.height-auto {
+  height: auto !important;
+}

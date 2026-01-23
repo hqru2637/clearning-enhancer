@@ -10,8 +10,8 @@ export class SidebarItem {
   }
 
   getNameElement() {
-    const el = this.element.querySelector<HTMLSpanElement>('span.c-name');
-    if (!el) throw new Error('Failed to find element: span.c-name');
+    const el = this.element.querySelectorAll<HTMLSpanElement>('span')[0];
+    if (!el) throw new Error('Failed to find element: span[0]');
     return el;
   }
 
@@ -25,7 +25,7 @@ export class SidebarItem {
   }
 
   getNotificationCount() {
-    const span = this.element.querySelector<HTMLSpanElement>('span.attention');
+    const span = this.element.querySelectorAll<HTMLSpanElement>('span')[1];
     if (!span) return 0;
     const count = parseInt(span.textContent.trim() || '0', 10);
     return Number.isNaN(count) ? 0 : count;
