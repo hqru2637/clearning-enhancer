@@ -2,14 +2,14 @@
   "name": "clearning-enhancer",
   "type": "module",
   "scripts": {
-    "build": "bun run typecheck && bun build.ts",
-    "dev": "bun build.ts --dev",
+    "build": "bun run typecheck && tsdown",
+    "dev": "tsdown --watch",
     "typecheck": "tsc"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.268",
     "@types/node": "^24.3.0",
-    "tsdown": "^0.14.1",
+    "tsdown": "^0.22.1",
     "typescript": "^5.9.2"
   },
   "packageManager": "bun@1.3.1"
