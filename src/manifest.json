@@ -25,6 +25,12 @@
       "run_at": "document_idle"
     }
   ],
+  "web_accessible_resources": [
+    {
+      "resources": ["download.svg"],
+      "matches": ["https://udai.c-learning.jp/*"]
+    }
+  ],
   "action": {
     "default_title": "C-learning Enhancer"
   }

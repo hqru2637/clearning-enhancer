@@ -58,7 +58,7 @@
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  
+
   padding: 2px 0 !important;
   border: 1px solid #4682b4 !important;
   border-bottom: none !important;
@@ -66,7 +66,7 @@
   background-color: #fff;
   color: #545454;
   text-align: center;
-  
+
   /* Animation Initial State */
   opacity: 0;
   visibility: hidden;
@@ -97,4 +97,18 @@
 
 .height-auto {
   height: auto !important;
+}
+
+.file-download-button {
+  padding: 6px;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+    border-radius: 6px;
+  }
+}
+  }
 }
