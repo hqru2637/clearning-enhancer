@@ -9,8 +9,9 @@ export default defineConfig((_, { ci }) => ({
   },
   clean: true,
   copy: [
-    { from: 'src/manifest.json', to: 'dist/manifest.json' },
-    { from: 'src/style.css', to: 'dist/style.css' },
+    { from: 'src/manifest.json', to: 'dist/' },
+    { from: 'src/style.css', to: 'dist/' },
+    { from: 'public/**/*', to: 'dist/' },
   ],
   outDir: 'dist',
   platform: 'neutral',

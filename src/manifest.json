@@ -6,7 +6,8 @@
   "description": "C-learningを使いやすくする拡張機能",
   "permissions": [
     "tabs",
-    "webRequest"
+    "webRequest",
+    "notifications"
   ],
   "host_permissions": [
     "https://udai.c-learning.jp/*"

@@ -50,3 +50,25 @@ function onPageTitleUpdate(tab: chrome.tabs.Tab) {
     console.log(`[ShowPDFTitle] Triggered setTitle for tab ${tabId} with title: ${cachedTitle}`);
   }
 }
+
+chrome.runtime.onMessage.addListener((request, _, sendResponse) => {
+  if (request.action === 'notify') {
+    chrome.notifications.create(
+      {
+        type: 'basic',
+        title: request.title ?? 'C-Learning Enhancer',
+        message: request.message,
+        iconUrl: '/bell.png',
+      },
+      (id) => {
+        if (chrome.runtime.lastError) {
+          sendResponse({ success: false, error: chrome.runtime.lastError.message });
+          return;
+        }
+        sendResponse({ success: true, notificationId: id });
+      },
+    );
+  }
+
+  return true; // Keep the message channel open for sendResponse
+});
