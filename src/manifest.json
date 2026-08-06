@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/chrome-manifest",
   "manifest_version": 3,
   "name": "C-learning Enhancer",
-  "version": "0.4.0",
+  "version": "0.5.1",
   "description": "C-learningを使いやすくする拡張機能",
   "permissions": [
     "tabs",
