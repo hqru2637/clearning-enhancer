@@ -14,7 +14,7 @@ export class ResizableSidebar {
   }
 
   private async loadWidth(): Promise<number> {
-    const result = await chrome.storage.local.get(this.STORAGE_KEY);
+    const result: { [key: string]: number } = await chrome.storage.local.get(this.STORAGE_KEY);
     return result[this.STORAGE_KEY] ?? 240;
   }
 

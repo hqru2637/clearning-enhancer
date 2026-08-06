@@ -7,13 +7,17 @@
 - HighlightPage  
   サイドバーに現在開いている講義をハイライト表示
 - EnterAttendance  
-  出席キー入力後にEnterキーで出席ボタンを押させる
+  出席キー入力欄でEnterキーを押して出席 / 出席キーがない場合は自動で出席
 - MarkAsRead  
   講義ページに「全て既読にする」ボタンを追加
 - ShowPDFTitle  
   PDFファイルのタブ名に正しいタイトルを表示
 - OpenSyllabus  
   講義ページにシラバスを開くボタンを追加
+- FileDownload  
+  教材倉庫の添付ファイルリンクにダウンロードボタンを追加
+- ResizableSidebar  
+  サイドバーの幅をドラッグで変更可能にする
 
 
 ## インストール

@@ -1,7 +1,5 @@
 import { defineConfig } from 'tsdown';
 
-const isDev = process.argv.includes('--dev');
-
 export default defineConfig((_, { ci }) => ({
   entry: {
     background: 'src/background.ts',
@@ -13,7 +11,6 @@ export default defineConfig((_, { ci }) => ({
     { from: 'src/style.css', to: 'dist/' },
     { from: 'public/**/*', to: 'dist/' },
   ],
-  outDir: 'dist',
   platform: 'neutral',
   minify: ci,
   sourcemap: !ci,
