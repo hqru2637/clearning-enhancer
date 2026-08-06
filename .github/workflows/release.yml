@@ -1,8 +1,9 @@
 name: Release
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - "v*"
 
 permissions:
   contents: write
@@ -20,19 +21,26 @@ jobs:
         with:
           node-version: 24
 
-      - name: Setup bun
+      - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: bun i
+        run: bun install
 
       - name: Build extension
         run: bun run build
 
-      - name: Upload extension to release
+      - name: Package extension
         run: |
-          FILE_NAME="clearning-enhancer-${{ github.event.release.tag_name }}.zip"
-          zip -r ./$FILE_NAME ./dist
-          gh release upload ${{ github.event.release.tag_name }} $FILE_NAME
+          FILE_NAME="clearning-enhancer-${GITHUB_REF_NAME}.zip"
+          zip -r "$FILE_NAME" dist
+          echo "FILE_NAME=$FILE_NAME" >> "$GITHUB_ENV"
+
+      - name: Create GitHub Release
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            "$FILE_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
