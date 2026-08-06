@@ -110,5 +110,24 @@
     border-radius: 6px;
   }
 }
+
+.resize-handle {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  width: 6px;
+  height: 100%;
+  cursor: ew-resize;
+  background: transparent;
+  transition: background-color .1s, width .1s;
+
+  &:hover {
+    background: rgba(0, 123, 255, 0.397);
+  }
+
+  &.dragging {
+    right: -2px;
+    width: 8px;
+    background: #0e6ead;
   }
 }

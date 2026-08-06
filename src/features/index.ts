@@ -4,4 +4,5 @@ export * from './file-download';
 export * from './highlight-page';
 export * from './mark-as-read';
 export * from './open-syllabus';
+export * from './resizable-sidebar';
 export * from './show-pdf-title';
